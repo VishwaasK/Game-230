@@ -41,26 +41,31 @@ int main()
 
             if (event.type == sf::Event::KeyPressed)
             {
+                //RED
                 if (event.key.code == sf::Keyboard::R)
                 {
                     shape.setFillColor(sf::Color::Red);
                     square.setFillColor(sf::Color::Red);
                 }
+                //GREEN
                 else if (event.key.code == sf::Keyboard::G)
                 {
                     shape.setFillColor(sf::Color::Green);
                     square.setFillColor(sf::Color::Green);
                 }
+                //BLUE
                 else if (event.key.code == sf::Keyboard::B)
                 {
                     shape.setFillColor(sf::Color::Blue);
                     square.setFillColor(sf::Color::Blue);
                 }
+                //BLACK
                 else if (event.key.code == sf::Keyboard::V)
                 {
                     shape.setFillColor(sf::Color::Black);
                     square.setFillColor(sf::Color::Black);
-                }                
+                }  
+                //Size Decrement
                 else if (event.key.code == sf::Keyboard::Left)
                 {
                     if (BrushDimension >= 5)
@@ -74,6 +79,7 @@ int main()
                     square.setSize(sf::Vector2f(BrushDimension * 2.f, BrushDimension * 2.f));
                     shape.setRadius(BrushDimension);                    
                 }
+                //Size Increment
                 else if (event.key.code == sf::Keyboard::Right)
                 {
                     if (BrushDimension < 50.f)
@@ -87,6 +93,7 @@ int main()
                     square.setSize(sf::Vector2f(BrushDimension * 2.f, BrushDimension * 2.f));
                     shape.setRadius(BrushDimension);
                 }
+                //Shape Change Circle
                 else if (event.key.code == sf::Keyboard::S)
                 {
                     if (brushkind == Circle)
@@ -97,6 +104,7 @@ int main()
                         CurrentBrush = &square;
                         brushkind = Square;                        
                     }
+                    //Shape Change Square
                     else if (brushkind == Square)
                     {                        
                         shape.setFillColor(sf::Color::Green);
